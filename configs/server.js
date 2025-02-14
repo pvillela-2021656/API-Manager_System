@@ -6,6 +6,7 @@ import helmet from "helmet"
 import morgan from "morgan"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import { dbConnection } from "./mongo.js"
+import categoryRoutes from "../src/category/category.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -17,7 +18,7 @@ const middlewares = (app) => {
 }
 
 const routes = (app) =>{
-    
+    app.use("/managerSystem/v1/category", categoryRoutes)
 }
 
 const conectarDB = async () =>{
