@@ -1,26 +1,44 @@
 import jwt from "jsonwebtoken"
+import User from "../user/user.model.js"
 
-export const validateJWT = (req, res, next) => {
-    let token = req.body.token || req.query.token || req.headers["authorization"]
+export const validateJWT = async (req, res, next) => {
+    try {
+        let token = req.body.token || req.query.token || req.headers["authorization"]
 
-    if(!token){
-        return res.status(401).json({
+        if (!token) {
+            return res.status(400).json({
+                success: false,
+                message: "There is no token in this request."
+            })
+        }
+
+        token = token.replace(/^Bearer\s+/, "")
+
+        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
+
+        const user = await User.findById(uid)
+
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: "No User in the DataBase."
+            })
+        }
+
+        if (user.status === false) {
+            return res.status(400).json({
+                success: false,
+                message: "User has already been deactivated."
+            })
+        }
+
+        req.usuarios = user
+        next()
+    } catch (err) {
+        return res.status(500).json({
             success: false,
-            message: "No hay token en la peticion"
+            message: "Error validating the token.",
+            error: err.message
         })
     }
-
-    try{
-        token = token.replace(/^Bearer\s+/, '')
-        const decoded = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
-
-        req.uid = decoded.uid
-    }catch(err){
-        return res.status(401).json({
-            success: false,
-            message: "Token no valido"
-        })
-    }
-
-    next()
 }

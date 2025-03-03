@@ -1,4 +1,5 @@
-import Category from "../category/category.model.js"
+import Category from "../category/category.model.js";
+import User from "../user/user.model.js";
 
 export const categoryExists = async (id = "") => {
     const existe = await Category.findById(id);

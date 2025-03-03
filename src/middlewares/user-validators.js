@@ -1,8 +1,8 @@
 import { body, param } from "express-validator";
-import { emailExists, usernameExists, userExists } from "../helpers/db-validators.js";
-import { validarCampos } from "./validate-fields.js";
+import { emailExists, userExists, usernameExists } from "../helpers/db-validators.js";
 import { deleteFileOnError } from "./delete-file-on-error.js";
 import { handleErrors } from "./handle_errors.js";
+import { validarCampos } from "./validate-fields.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("Name is required"),
@@ -16,7 +16,7 @@ export const registerValidator = [
         minLowercase: 1,
         minUppercase: 1,
         minNumbers: 1,
-        minSymbols: 1
+        minSymbols: 1,
     }),
     validarCampos,
     deleteFileOnError,
