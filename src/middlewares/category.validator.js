@@ -15,6 +15,13 @@ export const newCategoryValidator = [
     handleErrors
 ];
 
+export const listCategoryValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]
+
 export const deleteCategoryValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),

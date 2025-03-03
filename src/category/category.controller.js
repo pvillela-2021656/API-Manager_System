@@ -43,20 +43,12 @@ export const deleteCategory = async (req, res ) => {
 
 export const listCategory = async (req, res) => {
     try{
-        const { limit= 10, from = 0 } = req.query
-        const query = { status: true };
-        //Metodo para listar las categorias desde 0 hasta un limite de 10 categorias.
-        const [total, categories ] = await Promise.all([
-            Category.countDocuments(query),
-            Category.find(query)
-                .skip(Number(from))
-                .skip(Number(limit))
-        ])//Se accede a la lista
+        const categorylist = await Category.find();
+
         return res.status(200).json({
             success: true,
             message: "|Access to the list of categories granted|",
-            total,
-            categories//Categorias en la lista
+            categorylist
         })
     }catch(err) {
         res.status(500).json({

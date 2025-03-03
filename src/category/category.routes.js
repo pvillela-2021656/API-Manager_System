@@ -1,15 +1,15 @@
 import { Router } from "express";
 import { deleteCategory, listCategory, newCategory, updateCategory } from "./category.controller.js";
-import { deleteCategoryValidator, newCategoryValidator, updateCategoryValidator } from "../middlewares/category.validator.js";
+import { deleteCategoryValidator, newCategoryValidator, updateCategoryValidator, listCategoryValidator } from "../middlewares/category.validator.js";
 
 const router = Router();
 
-router.post("/newCategory", newCategory, newCategoryValidator);
+router.post("/newCategory", newCategoryValidator, newCategory);
 
-router.delete("/deleteCategory/:id", deleteCategory, deleteCategoryValidator);
+router.delete("/deleteCategory/:id", deleteCategoryValidator, deleteCategory);
 
-router.get("/listCategory", listCategory);
+router.get("/listCategory", listCategoryValidator, listCategory);
 
-router.patch("/updateCategory/:id", updateCategory, updateCategoryValidator);
+router.patch("/updateCategory/:id", updateCategoryValidator, updateCategory);
 
 export default router;
