@@ -3,8 +3,8 @@ import { emailExists, userExists, usernameExists } from "../helpers/db-validator
 import { deleteFileOnError } from "./delete-file-on-error.js";
 import { handleErrors } from "./handle_errors.js";
 import { validarCampos } from "./validate-fields.js";
-import { validateJWT } from "./validate-jwt.js"
-import { hasRoles } from "./validate-roles.js"
+import { validateJWT } from "./validate-jwt.js";
+import { hasRoles } from "./validate-roles.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("Name is required"),
@@ -59,5 +59,8 @@ export const updateRoleValidator = [
 //Funcionalidad de solo Update a CLIENT_ROLE
 export const updateOnlyClientValidator = [
     validateJWT,
-    hasRoles("A")
+    hasRoles("ADMIN_ROLE"),
+    body("role").optional().isString().withMessage("Role is wrong"),
+    validarCampos,
+    handleErrors
 ]

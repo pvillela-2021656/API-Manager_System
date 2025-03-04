@@ -1,11 +1,12 @@
 import { Router } from "express";
-import { deleteUserValidator, updateRoleValidator } from "../middlewares/user-validators.js";
-import { deleteUserClientRole, updateRole } from "./user.controller.js";
+import { deleteUserValidator, updateOnlyClientValidator, updateRoleValidator } from "../middlewares/user-validators.js";
+import { deleteUserClientRole, updateOnlyClient, updateRole } from "./user.controller.js";
 
-const router = Router()
+const router = Router();
 //Funcionalidad de ClientRole
-router.delete("/deleteUserByClientRole/:uid", deleteUserValidator, deleteUserClientRole)
+router.delete("/deleteUserByClientRole/:uid", deleteUserValidator, deleteUserClientRole);
 //Funcionalidad de solo Update Role
-router.patch("/updateRole/:uid", updateRoleValidator, updateRole)
-    
+router.patch("/updateRole/:uid", updateRoleValidator, updateRole);
+//Funcionalidad de solo Update a CLIENT_ROLE
+router.patch("/updateOnlyClientRole/:uid", updateOnlyClientValidator, updateOnlyClient);
 export default router;

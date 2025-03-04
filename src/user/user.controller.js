@@ -1,5 +1,5 @@
 import User from "./user.model.js";
-
+//FUNCIONALIDAD DE ACTUALIZAR EL ROL DEL USUARIO
 export const updateRole = async (req, res) => {
     try {
         const { uid } = req.params;
