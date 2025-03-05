@@ -64,3 +64,17 @@ export const updateOnlyClientValidator = [
     validarCampos,
     handleErrors
 ]
+
+export const loginAdminValidator = [
+    body("username").optional().isString().withMessage("Username es en formáto erróneo"),
+    body("password").isLength({ min: 8 }).withMessage("El password debe contener al menos 8 caracteres"),
+    validarCampos,
+    handleErrors
+];
+
+export const loginClientValidator = [
+    body("username").optional().isString().withMessage("Username es en formáto erróneo"),
+    body("password").isLength({ min: 8 }).withMessage("El password debe contener al menos 8 caracteres"),
+    validarCampos,
+    handleErrors
+];

@@ -8,11 +8,11 @@ import { hasRoles } from "./validate-roles.js"
 export const newProductValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
-    body("productName", "Product name is required").notEmpty(),
-    body("productCategory", "Product category is required").notEmpty(),
-    body("productDescription", "Product description is required").notEmpty(),
-    body("productPrice", "Product price is required").notEmpty(),
-    body("productStock", "Product stock is required").notEmpty(),
+    body("productName").notEmpty().withMessage("The name of the product IS required."),
+    body("productCategory").notEmpty().withMessage("The category of the product IS required."),
+    body("productDescription").notEmpty().withMessage("The description of the product IS required."),
+    body("productPrice").notEmpty().withMessage("The price of the product IS required."),
+    body("productStock").notEmpty().withMessage("The stock of the product IS required."),
     validarCampos,
     handleErrors
 ]
@@ -25,6 +25,43 @@ export const listProductValidator = [
 ]
 
 export const listOneProductValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    param("id").isMongoId().withMessage("Not a valid mongoDB ID"),
+    param("id").custom(productExists),
+    validarCampos,
+    handleErrors
+]
+
+export const updateProductValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    param("id").isMongoId().withMessage("Not a valid mongoDB ID"),
+    param("id").custom(productExists),
+    body("productName").notEmpty().withMessage("The name of the product IS required."),
+    body("productCategory").notEmpty().withMessage("The category of the product IS required."),
+    body("productDescription").notEmpty().withMessage("The description of the product IS required."),
+    body("productPrice").notEmpty().withMessage("The price of the product IS required."),
+    body("productStock").notEmpty().withMessage("The stock of the product IS required."),
+    validarCampos,
+    handleErrors
+]
+
+export const findOutOfStockValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]
+
+export const mostSelledValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]
+
+export const deleteProductValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
     param("id").isMongoId().withMessage("Not a valid mongoDB ID"),
