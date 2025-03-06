@@ -8,6 +8,7 @@ import authRoutes from "../src/auth/auth.routes.js"
 import categoryRoutes from "../src/category/category.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
 import productRoutes from "../src/product/product.routes.js"
+import purchaseRoutes from "../src/purchase/purchase.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import { dbConnection } from "./mongo.js"
 
@@ -25,6 +26,7 @@ const routes = (app) =>{
     app.use("/managerSystem/v1/auth", authRoutes)
     app.use("/managerSystem/v1/user", userRoutes)
     app.use("/managerSystem/v1/product", productRoutes)
+    app.use("/managerSystem/v1/purchase", purchaseRoutes)
 }
 
 const conectarDB = async () =>{

@@ -19,14 +19,14 @@ export const newProductValidator = [
 
 export const listProductValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     validarCampos,
     handleErrors
 ]
 
 export const listOneProductValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     param("id").isMongoId().withMessage("Not a valid mongoDB ID"),
     param("id").custom(productExists),
     validarCampos,
@@ -49,14 +49,14 @@ export const updateProductValidator = [
 
 export const findOutOfStockValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     validarCampos,
     handleErrors
 ]
 
 export const mostSelledValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     validarCampos,
     handleErrors
 ]
