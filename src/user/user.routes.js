@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteUserValidator, updateOnlyClientValidator, updateRoleValidator } from "../middlewares/user-validators.js";
+import { deleteUserValidator, updateClientValidator, updateRoleValidator } from "../middlewares/user-validators.js";
 import { deleteUserClientRole, updateOnlyClient, updateRole } from "./user.controller.js";
 
 const router = Router();
@@ -91,6 +91,6 @@ router.patch("/updateRole/:uid", updateRoleValidator, updateRole);
  *       500:
  *         description: Error updating user role to client
  */
-router.patch("/updateOnlyClientRole/:uid", updateOnlyClientValidator, updateOnlyClient);
+router.patch("/updateOnlyClientRole/:uid", updateClientValidator, updateOnlyClient);
 
 export default router;

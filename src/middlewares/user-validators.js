@@ -57,9 +57,9 @@ export const updateRoleValidator = [
     handleErrors
 ]
 //Funcionalidad de solo Update a CLIENT_ROLE
-export const updateOnlyClientValidator = [
+export const updateClientValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     body("role").optional().isString().withMessage("Role is wrong"),
     validarCampos,
     handleErrors

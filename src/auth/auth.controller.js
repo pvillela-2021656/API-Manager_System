@@ -1,7 +1,6 @@
 import { hash, verify } from "argon2";
 import { generateJWT } from "../helpers/generate-jwt.js";
 import User from "../user/user.model.js";
-import { purchaseHistory } from "../purchase/purchase.controller.js"
 import Purchase from "../purchase/purchase.model.js"
 
 export const register = async (req, res) => {
@@ -45,7 +44,7 @@ export const loginAdmin = async (req, res) => {
 
         if (user.role !== "ADMIN_ROLE") {
             return res.status(403).json({
-                message: "Acceso denegado",
+                message: "Acceso denegado",//BLOQUEO DE USO DE CLIENTES PARA EL LOGIN:
                 error: "Solo los administradores pueden iniciar sesión aquí"
             });
         }

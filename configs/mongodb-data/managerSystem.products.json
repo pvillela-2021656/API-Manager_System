@@ -1,0 +1,70 @@
+[{
+  "_id": {
+    "$oid": "67cb1113e276e90bf595505e"
+  },
+  "productName": "Mouse",
+  "productCategory": {
+    "$oid": "67cb0f50bb38c97421fd9c9d"
+  },
+  "productDescription": "Un mouse para gaming.",
+  "productSales": 9,
+  "productPrice": 50,
+  "productStock": 91,
+  "Status": true
+},
+{
+  "_id": {
+    "$oid": "67cb11c3e276e90bf5955067"
+  },
+  "productName": "HEADPHONES",
+  "productCategory": {
+    "$oid": "67cb0f50bb38c97421fd9c9d"
+  },
+  "productDescription": "HEADPHONES PARA GAMING.",
+  "productSales": 6,
+  "productPrice": 91,
+  "productStock": 18,
+  "Status": true
+},
+{
+  "_id": {
+    "$oid": "67cb1264e276e90bf595506f"
+  },
+  "productName": "Nostock",
+  "productCategory": {
+    "$oid": "67cb0f50bb38c97421fd9c9d"
+  },
+  "productDescription": "Prueba para no stock.",
+  "productSales": 0,
+  "productPrice": 57,
+  "productStock": 0,
+  "Status": true
+},
+{
+  "_id": {
+    "$oid": "67cb1337e276e90bf5955077"
+  },
+  "productName": "Delete",
+  "productCategory": {
+    "$oid": "67cb0f50bb38c97421fd9c9d"
+  },
+  "productDescription": "Prueba para delete.",
+  "productSales": 0,
+  "productPrice": 89,
+  "productStock": 15,
+  "Status": true
+},
+{
+  "_id": {
+    "$oid": "67cb1377e276e90bf595507e"
+  },
+  "productName": "Delete",
+  "productCategory": {
+    "$oid": "67cb0f50bb38c97421fd9c9d"
+  },
+  "productDescription": "Prueba para delete.",
+  "productSales": 0,
+  "productPrice": 89,
+  "productStock": 15,
+  "Status": true
+}]

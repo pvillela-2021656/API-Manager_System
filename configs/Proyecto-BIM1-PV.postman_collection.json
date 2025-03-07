@@ -1,0 +1,889 @@
+{
+	"info": {
+		"_postman_id": "916a9ff6-927e-4fb5-9c90-8e4c4074ffd6",
+		"name": "Proyecto-BIM1-PV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42927054"
+	},
+	"item": [
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "Cart Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMDQ5OWIyMzVjN2Q5NjVjMjlmN2EiLCJpYXQiOjE3NDEzNjM5MTIsImV4cCI6MTc0MTM2NzUxMn0.5rNJaB3Zrvvq5mCsl1e2STF2lNnoyyTsRpjUier8bfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Mouse\",\r\n    \"amount\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/purchase/newCartRequest/67cb063091212d1f7d6cde64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"purchase",
+								"newCartRequest",
+								"67cb063091212d1f7d6cde64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart Confirmation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMDQ5OWIyMzVjN2Q5NjVjMjlmN2EiLCJpYXQiOjE3NDEzNjM5MTIsImV4cCI6MTc0MTM2NzUxMn0.5rNJaB3Zrvvq5mCsl1e2STF2lNnoyyTsRpjUier8bfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/purchase/bill/67cb063091212d1f7d6cde64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"purchase",
+								"bill",
+								"67cb063091212d1f7d6cde64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Purchase History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMDQ5OWIyMzVjN2Q5NjVjMjlmN2EiLCJpYXQiOjE3NDEzNjM5MTIsImV4cCI6MTc0MTM2NzUxMn0.5rNJaB3Zrvvq5mCsl1e2STF2lNnoyyTsRpjUier8bfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/purchase/userPurchaseHistory/67caff2b7c26beeaaff2528d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"purchase",
+								"userPurchaseHistory",
+								"67caff2b7c26beeaaff2528d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "New Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE0MTYsImV4cCI6MTc0MTM2NTAxNn0.0kgqAbLYK75rMIccZR6-qJe6sS-umsVMx0uMXolF8a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Delete\",\r\n    \"productCategory\": \"67cb0f50bb38c97421fd9c9d\",\r\n    \"productDescription\": \"Prueba para delete.\",\r\n    \"productSales\": \"0\",\r\n    \"productPrice\": \"89\",\r\n    \"productStock\": \"15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/newProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"newProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE0MTYsImV4cCI6MTc0MTM2NTAxNn0.0kgqAbLYK75rMIccZR6-qJe6sS-umsVMx0uMXolF8a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/listProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"listProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List One Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE0MTYsImV4cCI6MTc0MTM2NTAxNn0.0kgqAbLYK75rMIccZR6-qJe6sS-umsVMx0uMXolF8a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/listOneProduct/67cb1113e276e90bf595505e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"listOneProduct",
+								"67cb1113e276e90bf595505e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get No Stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE3MDUsImV4cCI6MTc0MTM2NTMwNX0.iQNe9AjLJraAiHZp3cfBzuNf2NxNjerEEFyDNmmEbg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/noStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"noStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Most Selled Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE3MDUsImV4cCI6MTc0MTM2NTMwNX0.iQNe9AjLJraAiHZp3cfBzuNf2NxNjerEEFyDNmmEbg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/mostSelled",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"mostSelled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE3MDUsImV4cCI6MTc0MTM2NTMwNX0.iQNe9AjLJraAiHZp3cfBzuNf2NxNjerEEFyDNmmEbg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"HEADPHONES\",\r\n    \"productCategory\": \"67cb0f50bb38c97421fd9c9d\",\r\n    \"productDescription\": \"HEADPHONES PARA GAMING.\",\r\n    \"productSales\": \"0\",\r\n    \"productPrice\": \"91\",\r\n    \"productStock\": \"24\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/updateProduct/67cb11c3e276e90bf5955067",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"updateProduct",
+								"67cb11c3e276e90bf5955067"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjE3MDUsImV4cCI6MTc0MTM2NTMwNX0.iQNe9AjLJraAiHZp3cfBzuNf2NxNjerEEFyDNmmEbg0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/product/deleteProduct/67cb1377e276e90bf595507e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"product",
+								"deleteProduct",
+								"67cb1377e276e90bf595507e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth Register Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pablo",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Villela",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "PVILLELA",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pvillela-2021656@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Roland#1",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Informatica/Downloads/roland2.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "57004325",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "CLIENT_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "RAFA",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "CARRILLO",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ACARRILLO",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "acarrillo-2020923@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Roland#5",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Informatica/Downloads/roland2.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "02367552",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ACARRILLO\",\r\n    \"password\": \"Roland#5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/auth/loginAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"auth",
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Login Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"JRAMOS\",\r\n    \"password\": \"Roland#2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/auth/loginClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"auth",
+								"loginClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMDJiNGIyMzVjN2Q5NjVjMjlmNzYiLCJpYXQiOjE3NDEzNTkzMDAsImV4cCI6MTc0MTM2MjkwMH0.dw_p5IIlXGhfRbVhmMl8zpOAC8USDfLTKhSOGDGG3UM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/user/updateRole/67cb02b4b235c7d965c29f76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"user",
+								"updateRole",
+								"67cb02b4b235c7d965c29f76"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Only Client Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjAxOTMsImV4cCI6MTc0MTM2Mzc5M30.a7gxW_q86XCP1NAsa9ldJMzeBZAH4-P2rOQZtWRVAno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Julois",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Ramos",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "JRAMO",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jramosas@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Roland#32",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Informatica/Downloads/images.jpg"
+								},
+								{
+									"key": "phone",
+									"value": "43667835",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "CLIENT_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/user/updateOnlyClientRole/67caff2b7c26beeaaff2528d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"user",
+								"updateOnlyClientRole",
+								"67caff2b7c26beeaaff2528d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMDJiNGIyMzVjN2Q5NjVjMjlmNzYiLCJpYXQiOjE3NDEzNTkzMDAsImV4cCI6MTc0MTM2MjkwMH0.dw_p5IIlXGhfRbVhmMl8zpOAC8USDfLTKhSOGDGG3UM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/user/deleteUserByClientRole/67caff2b7c26beeaaff2528d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"user",
+								"deleteUserByClientRole",
+								"67caff2b7c26beeaaff2528d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "New Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjA0MDEsImV4cCI6MTc0MTM2NDAwMX0.ctL_Uji95oa6TFPjWCuBQShAZSiIhOSOxLgp1feXBwQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Comida\",\r\n    \"categoryDescription\": \"Verduras, frutas, carne, etc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/category/newCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"category",
+								"newCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjA5NjAsImV4cCI6MTc0MTM2NDU2MH0.my9Z1IfQojncqYB5XOASBSM96E2TcltnCUHtjYRX6KE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"ELECTRONICS\",\r\n    \"categoryDescription\": \"UPDATE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/category/updateCategory/67cb0f50bb38c97421fd9c9d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"category",
+								"updateCategory",
+								"67cb0f50bb38c97421fd9c9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjA5NjAsImV4cCI6MTc0MTM2NDU2MH0.my9Z1IfQojncqYB5XOASBSM96E2TcltnCUHtjYRX6KE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/category/listCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"category",
+								"listCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NiMGJmMTMwMzVjYTQ1NGRlZDhlYmYiLCJpYXQiOjE3NDEzNjA0MDEsImV4cCI6MTc0MTM2NDAwMX0.ctL_Uji95oa6TFPjWCuBQShAZSiIhOSOxLgp1feXBwQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/managerSystem/v1/category/deleteCategory/67cb0fbee276e90bf5955056",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"managerSystem",
+								"v1",
+								"category",
+								"deleteCategory",
+								"67cb0fbee276e90bf5955056"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

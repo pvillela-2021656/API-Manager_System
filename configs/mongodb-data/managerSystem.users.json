@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "67caff2b7c26beeaaff2528d"
+  },
+  "name": "Julio",
+  "surname": "Ramos",
+  "username": "JRAMOS",
+  "email": "jramos@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$HBGGzI/dHMyNVZX3ypJgUQ$/u7H5SBcsjvNp/7FwtPflNV1el9WwOKYT+WrD8zYz9k",
+  "profilePicture": null,
+  "phone": "21134421",
+  "role": "CLIENT_ROLE",
+  "status": false
+},
+{
+  "_id": {
+    "$oid": "67cb0499b235c7d965c29f7a"
+  },
+  "name": "Pablo",
+  "surname": "Villela",
+  "username": "PVILLELA",
+  "email": "pvillela-2021656@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$vxnKMTnS7OMp23nafqtZCg$SqRX0NqF6jr29wKpjP2eJzjvXd53GJVe2K3yQBDJdI8",
+  "profilePicture": "roland2-1741358233312.jpg",
+  "phone": "57004325",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb063091212d1f7d6cde64"
+  },
+  "name": "RAFA",
+  "surname": "CARRILLO",
+  "username": "ACARRILLO",
+  "email": "acarrillo-2020923@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$4BTs1SXYZUVl9lEyWcrtVA$J4iRmDu+xwzmFyIPYI+4Mm/8+kZpG0opI0TXiWruX1U",
+  "profilePicture": null,
+  "phone": "02367552",
+  "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb0bf13035ca454ded8ebf"
+  },
+  "name": "PANCHO",
+  "surname": "VILLA",
+  "username": "ADMINDEFAULT",
+  "email": "ADMINDEFAULT@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$6iI60gpfc3EYdKjxIyJO+g$2W445SzibyhyXivfsBdc6kscSXV0prd68sgop9NracI",
+  "profilePicture": "pvillela-1740959974663.jpg",
+  "phone": "99021324",
+  "role": "ADMIN_ROLE",
+  "status": true
+}]

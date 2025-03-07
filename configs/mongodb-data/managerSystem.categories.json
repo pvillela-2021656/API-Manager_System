@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "67caff247c26beeaaff25286"
+  },
+  "categoryName": "defaultCategory",
+  "categoryDescription": "Categoria default.",
+  "categoryStatus": true
+},
+{
+  "_id": {
+    "$oid": "67cb0f50bb38c97421fd9c9d"
+  },
+  "categoryName": "ELECTRONICS",
+  "categoryDescription": "UPDATE",
+  "categoryStatus": true
+},
+{
+  "_id": {
+    "$oid": "67cb0fbee276e90bf5955056"
+  },
+  "categoryName": "Comida",
+  "categoryDescription": "Verduras, frutas, carne, etc",
+  "categoryStatus": true
+}]
