@@ -6,7 +6,7 @@ export const adminDefault = async () => {
 
         const existingAdmin = await User.findOne({ email: "ADMINDEFAULT@kinal.edu.gt" });
         if (existingAdmin) {
-            console.log("Admin has already been created");
+            //console.log("Admin has already been created");
             return;
         }
             await User.create({
@@ -20,9 +20,9 @@ export const adminDefault = async () => {
                 role: "ADMIN_ROLE"
             });
             
-        console.log("Default admin created");
+        //console.log("Default admin created");
 
     } catch (err) {
-        console.log("Error creating user");
+        //console.log("Error creating user");
     }
 };
