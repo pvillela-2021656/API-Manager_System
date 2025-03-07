@@ -1,3 +1,4 @@
+import Product from "../product/product.model.js";
 import Category from "./category.model.js";
 
 export const newCategory = async (req, res) => {
@@ -22,12 +23,22 @@ export const newCategory = async (req, res) => {
         })
     }
 }
-
+//SI UN PRODUCT YA TIENE CATEGORY ASIGNADO, ENTONCES CUMPLE:
 export const deleteCategory = async (req, res ) => {
     try{
         const { id } = req.params
-        await Category.findByIdAndUpdate(id, { status: false}, { new: true})
-        //Categoría eliminada
+        const categoryExists = await Category.findById(id);
+        if (!categoryExists) {
+            return res.status(404).json({
+                success: false,
+                message: "Couldnt find the category to delete."
+            });
+        }
+        
+        const categoryDefault = await getDefaultCategory();
+        await Product.updateMany({ productCategory: id }, { productCategory: categoryDefault._id });
+        await Category.findByIdAndDelete(id);
+
         return res.status(200).json({
             success: true,
             message: "|Category successfully deleted|"

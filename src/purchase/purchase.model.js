@@ -20,7 +20,7 @@ const purchaseSchema = Schema({
     status:{
         type: String,
         enum: ["PEND", "DONE"],
-        default: "ON_CART"
+        default: "PEND"
     }
 },
 {

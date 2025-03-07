@@ -148,7 +148,7 @@ export const deleteProduct = async (req, res) => {
         if(!deleteProduct){
             return res.status(404).json({
                 success: false,
-                message: "Product not found."
+                message: "Couldnt find the product to delete."
             });
         }
 
