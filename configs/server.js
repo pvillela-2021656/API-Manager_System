@@ -11,6 +11,7 @@ import productRoutes from "../src/product/product.routes.js"
 import purchaseRoutes from "../src/purchase/purchase.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import { dbConnection } from "./mongo.js"
+import { swaggerDocs, swaggerUi } from "./swagger.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -23,10 +24,12 @@ const middlewares = (app) => {
 
 const routes = (app) =>{
     app.use("/managerSystem/v1/category", categoryRoutes)
-    app.use("/managerSystem/v1/auth", authRoutes)
+    app.use("/managerSystem/v1/auth", authRoutes)   
     app.use("/managerSystem/v1/user", userRoutes)
     app.use("/managerSystem/v1/product", productRoutes)
     app.use("/managerSystem/v1/purchase", purchaseRoutes)
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+
 }
 
 const conectarDB = async () =>{

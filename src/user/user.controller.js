@@ -57,11 +57,11 @@ export const deleteUserClientRole = async (req, res) => {
     }
 };
 
-//FUNCIONALIDAD, ELI
+//FUNCIONALIDAD, UN USUARIO PUEDE GESTIONAR SU PERFIL
 export const updateOnlyClient = async (req, res) => {
     try {
         const { uid } = req.params;
-        const data = req.body;
+        const data = req.body;  
 
         const usuarios = await User.findById(uid);
 

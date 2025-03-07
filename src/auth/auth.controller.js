@@ -1,6 +1,8 @@
 import { hash, verify } from "argon2";
 import { generateJWT } from "../helpers/generate-jwt.js";
 import User from "../user/user.model.js";
+import { purchaseHistory } from "../purchase/purchase.controller.js"
+import Purchase from "../purchase/purchase.model.js"
 
 export const register = async (req, res) => {
     try {
@@ -28,6 +30,7 @@ export const register = async (req, res) => {
 //login de ADMIN
 export const loginAdmin = async (req, res) => {
     const { username, password } = req.body;
+
     try {
         const user = await User.findOne({
             $or: [{ username: username }, { password: password }]
@@ -57,13 +60,19 @@ export const loginAdmin = async (req, res) => {
         }
 
         const token = await generateJWT(user.id);
+        const history = await Purchase.find({ user: user.id, status: "DONE" })
+            .populate("product.product", "productName productPrice")
+            .sort({ createdAt: -1 })
+
+        const purchaseHistory = history.length ? history : "No purchases yet."
 
         return res.status(200).json({
             message: "Login successful",
             userDetails: {
                 token: token,
                 profilePicture: user.profilePicture,
-                role: user.role
+                role: user.role,
+                purchaseHistory: purchaseHistory
             }
         });
     } catch (err) {
@@ -74,12 +83,14 @@ export const loginAdmin = async (req, res) => {
     }
 };
 
+
 //Login de CLIENT
 export const loginClient = async (req, res) => {
-    const { email, username, password } = req.body;
+    const { username, password } = req.body;  
+
     try {
         const user = await User.findOne({
-            $or: [{ email: email }, { username: username }]
+            $or: [{ username: username }, { email: username }] 
         });
 
         if (!user) {
@@ -107,12 +118,19 @@ export const loginClient = async (req, res) => {
 
         const token = await generateJWT(user.id);
 
+        const history = await Purchase.find({ user: user.id, status: "DONE" })
+            .populate("product.product", "productName productPrice")
+            .sort({ createdAt: -1 });
+
+        const purchaseHistory = history.length ? history : "No purchases yet."
+
         return res.status(200).json({
             message: "Login successful",
             userDetails: {
                 token: token,
                 profilePicture: user.profilePicture,
-                role: user.role
+                role: user.role,
+                purchaseHistory: purchaseHistory
             }
         });
     } catch (err) {

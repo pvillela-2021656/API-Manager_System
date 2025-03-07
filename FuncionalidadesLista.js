@@ -12,7 +12,7 @@
 *-Category:
 *   -Crear Categoria
 *   -Listar Categorias
-*   -Delete Categorias
+*   -Delete Categorias(SI SE ELIMINA CATEGORY EL PRODUCTO SE IRA CON EL DEFAULT)
 *   -Update Categorias
 *PENDIENTES:
 *   -NADA
@@ -25,11 +25,14 @@
 *   -Hacer un carrito de compras de productos
 *   -COnfirmar las compras y crear una factura
 *   -Tener un historial de compras
+*   -Que el usuario pueda gestionar su propio 
 *PENDIENTES:
-*   -Eliminacion de cuenta con confirmación
-*   -Gestion de perfil (????)
+*   -Eliminacion de cliente de su propio perfil(FALTA MEDIDAS DE SEGURIDAD)
 *-Factura/Bill:
-*   -
+*   -Generar PDF(Con fecha)
+*   -Historial de facturas de un usuario
+*PENDIENTES:
+*   -EDITAR FACTURA
 */
 
 //EXTERIOR: CREAR SWAGGER Y DOCUMENTACION, ENDPOINTS DE POSTMAN Y INFO DE MONGODB

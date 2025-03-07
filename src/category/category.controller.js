@@ -35,9 +35,11 @@ export const deleteCategory = async (req, res ) => {
             });
         }
         
-        const categoryDefault = await getDefaultCategory();
-        await Product.updateMany({ productCategory: id }, { productCategory: categoryDefault._id });
-        await Category.findByIdAndDelete(id);
+        await Category.findByIdAndDelete(id)
+        const categoryDefault = await Category.findOne({ categoryName: "defaultCategory"})
+        await Product.updateMany({category: id}, 
+            {category: categoryDefault._id}
+        )
 
         return res.status(200).json({
             success: true,
@@ -90,5 +92,22 @@ export const updateCategory = async (req, res) => {
             message: "There was a mistake in the update of this category.",
             error: err.message
         })
+    }
+}
+
+export const categoryDefault = async () => {
+    try {
+        const existingCategory = await Category.findOne({ categoryName: "defaultCategory" })
+            if (existingCategory) {
+                console.log("Category has already been created");
+                return;
+            }
+            await Category.create({
+                categoryName: "defaultCategory",
+                categoryDescription: "Categoria default."
+        })
+        console.log("Default category created.")
+    }catch(err){
+        console.log("Error creating default category.")
     }
 }
