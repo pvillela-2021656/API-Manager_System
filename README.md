@@ -226,9 +226,9 @@ Generar carritos de compras, facturas en PDF y historial de compras:
 ```cmd
   set port=3006
 ```
-# Cada una de las acciones en esta API REQUIERE de validación de JWT(Excepto los login), siempre usar los Token de admin o usuario dependiendo el uso.
-# Si surgen dudas sobre las funcionalidades de esta API, todo se encuentra en el archivo de endpoints "Proyecto-BIM1-PV.postman_collection.json"
-# Cualquier otro error contactar a:
+### Cada una de las acciones en esta API REQUIERE de validación de JWT(Excepto los login), siempre usar los Token de admin o usuario dependiendo el uso.
+### Si surgen dudas sobre las funcionalidades de esta API, todo se encuentra en el archivo de endpoints "Proyecto-BIM1-PV.postman_collection.json"
+### Cualquier otro error contactar a:
 ```bash
 pvillela-2021656@kinal.edu.gt
 ```
