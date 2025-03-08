@@ -49,6 +49,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "password": "Roland#1"
 }
 ```
+
 **UPDATE USER ROLE**
 ```bash
 (PATCH) (http://127.0.0.1:3006/managerSystem/v1/user/updateRole/user)
@@ -60,6 +61,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "role": "ADMIN_ROLE" o "CLIENT_ROLE"
 }
 ```
+
 **UPDATE ONLY CLIENT ROLE**
 ```bash
 (PATCH) (http://localhost:3006/managerSystem/v1/user/updateOnlyClientRole/user)
@@ -78,6 +80,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "role": "CLIENT_ROLE" o "ADMIN_ROLE"
 }
 ```
+
 **DELETE USER BY CLIENT**
 ```bash
 (DELETE) http://localhost:3006/managerSystem/v1/user/deleteUserByClientRole/user
@@ -85,6 +88,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
 *BearerToken: loginAdmin*
 
 ## CATEGORY:
+
 **NEW CATEGORY**
 ```bash
 (POST) http://localhost:3006/managerSystem/v1/category/newCategory
@@ -97,6 +101,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "categoryDescription": "text"
 }
 ```
+
 **UPDATE CATEGORY**
 ```bash
 (POST) http://localhost:3006/managerSystem/v1/category/updateCategory/category
@@ -109,11 +114,13 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "categoryDescription": "newText"
 }
 ```
+
 **LIST CATEGORY**
 ```bash
 (GET) http://localhost:3006/managerSystem/v1/category/listCategory
 ```
 *BearerToken: loginAdmin*
+
 **DELETE CATEGORY**
 ```bash
 (DELETE) http://localhost:3006/managerSystem/v1/category/deleteCategory/category
@@ -121,6 +128,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
 *BearerToken: loginAdmin*
 
 ## PRODUCT:
+
 **NEW PRODUCT**
 ```bash
 (POST) http://localhost:3006/managerSystem/v1/product/newProduct
@@ -137,26 +145,31 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "productStock": "#"
 }
 ```
+
 **LIST PRODUCTS**
 ```bash
 (GET) http://localhost:3006/managerSystem/v1/product/listProduct
 ```
 *Bearer Token: LoginAdmin, loginClient*
+
 **LIST ONE PRODUCT**
 ```bash
 (GET) http://localhost:3006/managerSystem/v1/product/listOneProduct/product
 ```
 *Bearer Token: LoginAdmin, loginClient*
+
 **PRODUCTS WITH NO STOCK**
 ```bash
 (GET) http://localhost:3006/managerSystem/v1/product/noStock
 ```
 *Bearer Token: LoginAdmin, loginClient*
+
 **MOST SELLED PRODUCTS**
 ```bash
 (GET) http://localhost:3006/managerSystem/v1/product/mostSelled
 ```
 *Bearer Token: LoginAdmin, loginClient*
+
 **UPDATE PRODUCT**
 ```bash
 (PUT) http://localhost:3006/managerSystem/v1/product/updateProduct/product
@@ -173,6 +186,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
     "productStock": "#"
 }
 ```
+
 **DELETE PRODUCT**
 ```bash
 (DELETE) http://localhost:3006/managerSystem/v1/product/deleteProduct/product
@@ -181,6 +195,7 @@ Para el uso sencillo de los clientes que usen esta API, se ha creado un administ
 
 Generar carritos de compras, facturas en PDF y historial de compras:
 ## PURCHASE:
+
 **CART REQUEST**
 ```bash
 (POST) http://localhost:3006/managerSystem/v1/purchase/newCartRequest/user
@@ -193,11 +208,13 @@ Generar carritos de compras, facturas en PDF y historial de compras:
     "amount": #
 }
 ```
+
 **CART CONFIRMATION**
 ```bash
 (POST) http://localhost:3006/managerSystem/v1/purchase/bill/user
 ```
 *Bearer Token: LoginAdmin, LoginClient*
+
 **PURCHASE HISTORY**
 ```bash
 (GET) http://localhost:3006/managerSystem/v1/purchase/userPurchaseHistory/user
